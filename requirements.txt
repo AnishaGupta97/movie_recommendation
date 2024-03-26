@@ -1,0 +1,6 @@
+kafka-python
+numpy
+scikit-surprise
+pandas
+pytest
+pytest-cov

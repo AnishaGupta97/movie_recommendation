@@ -1,0 +1,23 @@
+name: "recommendation_model"
+platform: "tensorflow_savedmodel"  # Change platform type to TensorFlow SavedModel for Triton
+max_batch_size: 1
+input [
+  {
+    name: "user_id"
+    data_type: TYPE_INT32
+    dims: [1]
+  }
+]
+output [
+  {
+    name: "output"
+    data_type: TYPE_STRING
+    dims: [20]  # Assuming your model returns 20 recommendations
+  }
+]
+instance_group [
+  {
+    count: 1
+    kind: KIND_CPU
+  }
+]
